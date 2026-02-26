@@ -2,22 +2,29 @@ package entities;
 
 public class Employee {
 	private String name;
-	private Integer hour;
-	private Double valuePerHour;
+	private int hour;
+	private double valuePerHour;
 	
 	public Employee() {
 		
 	}
 	
-	public Employee(String name, Integer hour, Double valuePerHour) {
+	public Employee(String name, int hour, double valuePerHour) {
 		this.name = name;
 		this.hour = hour;
 		this.valuePerHour = valuePerHour;
 	}
 	
+	@Override
 	public String toString() {
-		return name + hour + valuePerHour;
+    return "Employee: "
+            + name
+            + ", Hours: "
+            + hour
+            + ", Value per hour: "
+            + String.format("%.2f", valuePerHour);
 	}
+
 
 	public String getName() {
 		return name;
@@ -27,24 +34,25 @@ public class Employee {
 		this.name = name;
 	}
 
-	public Integer getHour() {
+	public int getHour() {
 		return hour;
 	}
 
-	public void setHour(Integer hour) {
+	public void setHour(int hour) {
 		this.hour = hour;
 	}
 
-	public Double getValuePerHour() {
+	public double getValuePerHour() {
 		return valuePerHour;
 	}
 
-	public void setValuePerHour(Double valuePerHour) {
+	public void setValuePerHour(double valuePerHour) {
 		this.valuePerHour = valuePerHour;
 	}
 	
-	public Double payment() {
-		Double basePayment = hour * valuePerHour;
+	public double payment() {
+		double basePayment = hour * valuePerHour;
 		return basePayment;
 	}
 }
+
